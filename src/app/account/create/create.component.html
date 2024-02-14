@@ -1,0 +1,16 @@
+<div>
+    <form action="/action_page.php" [formGroup]="studentForm">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name.." formControlName="firstName">
+  
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name.." formControlName="lastName">
+
+      <label for="email">Last Name</label>
+      <input type="text" id="email" name="email" placeholder="your email.." formControlName="email">
+  
+      
+    
+      <input type="submit" value="Submit" (click)="submitStudentForm()">
+    </form>
+  </div>

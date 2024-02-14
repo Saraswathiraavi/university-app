@@ -1,0 +1,37 @@
+<p>nation works!</p>
+<button type="submit" (click)="addToCart()">Add to Cart</button>
+
+<button class="button" (click)="navigateToIndia()">India</button>
+<button class="button button2" (click)="navigateToNepal()">Nepal</button>
+<button class="button button3" (click)="getNationalUniversities()">show all</button>
+
+<router-outlet></router-outlet>
+
+<table id="customers" *ngIf=showData>
+    <tr>
+      <th>country code</th>
+      <th>country</th>
+      <th>university name</th>
+      
+      
+      <!-- <tr>
+        <td>{{universitiesDataList[0].alpha_two_code}}</td>
+        <td>{{universitiesDataList[0].country}}</td>
+        <td>{{universitiesDataList[0].name}}</td>
+      </tr>
+      <tr>
+        <td>B{{universitiesDataList[1].alpha_two_code}}</td>
+        <td>{{universitiesDataList[1].country}}</td>
+        <td>{{universitiesDataList[1].name}}</td>
+      </tr> -->
+      <tr *ngFor="let univ of nationalUniversities">
+        <td>{{univ.alpha_two_code}}</td>
+        <td>{{univ.country}}</td>
+        <td>{{univ.name}}</td>
+       
+      </tr>
+      
+  
+    </table> 
+  
+

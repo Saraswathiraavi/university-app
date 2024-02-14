@@ -1,0 +1,22 @@
+<table id="customers" >
+    <tr>
+      <th>country code</th>
+      <th>country</th>
+      <th>university name</th>
+      <th>Domain Length</th>
+      <th>Web Pages</th>
+       <th>status</th> 
+
+       <tr *ngFor="let university of universityTableData">
+        <td>{{university.alpha_two_code}}</td>
+        <td>{{university.country}}</td>
+        <td>{{university.name}}</td>
+        <td>{{university.domains.length}}</td>
+        <td>{{university.web_pages.length}}</td>
+        <!-- <td>{{university.status}}</td> -->
+      </tr>
+      
+  
+    </table> 
+  
+      

@@ -1,0 +1,32 @@
+
+<table id="customers" >
+    <tr>
+      <th>country code</th>
+      <th>country</th>
+      <th>university name</th>
+      <th>Domain Length</th>
+      <th>Web Pages</th>
+       <th>status</th> 
+      
+      <!-- <tr>
+        <td>{{universitiesDataList[0].alpha_two_code}}</td>
+        <td>{{universitiesDataList[0].country}}</td>
+        <td>{{universitiesDataList[0].name}}</td>
+      </tr>
+      <tr>
+        <td>B{{universitiesDataList[1].alpha_two_code}}</td>
+        <td>{{universitiesDataList[1].country}}</td>
+        <td>{{universitiesDataList[1].name}}</td>
+      </tr> -->
+      <tr *ngFor="let university of uTable">
+        <td>{{university.alpha_two_code}}</td>
+        <td>{{university.country}}</td>
+        <td>{{university.name}}</td>
+        <td>{{university.domains.length}}</td>
+        <td>{{university.web_pages.length}}</td>
+        <!-- <td>{{university.status}}</td> -->
+      </tr>
+      
+  
+    </table> 
+  

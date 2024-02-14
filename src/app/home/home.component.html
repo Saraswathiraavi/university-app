@@ -1,0 +1,33 @@
+<button (click)="popUpFunction()" >pop-up</button>
+<div >
+<h2 appHighlightText > 
+    working on directives
+</h2>
+ </div>
+        
+        
+<div *ngIf="isAvailable">
+            <h1>if condition is working</h1>
+</div>
+
+<!-- <ng-template>
+<div [ngIf]='isAvailable'>
+    if condition is working.
+</div>  
+</ng-template> -->
+
+<button class="btn btn-warning" (click)="isAvailable=!isAvailable"> Toggle condition</button>
+
+<div appHighlightText *appStuctureDirective='isAvailable'>
+    
+    if condition is working.
+</div> 
+
+<div [ngSwitch]="value">
+
+     <h1 *ngSwitchCase="10">value is 10</h1>
+     <h1 *ngSwitchCase="15">value is 15</h1>
+     <h1 *ngSwitchDefault>Default value</h1>
+
+</div>
+

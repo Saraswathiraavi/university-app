@@ -1,0 +1,11 @@
+.topnav{
+    background-color: azure;
+    text-align: left;
+    text-decoration-color: black;
+    padding: 14px.16px;
+   }
+
+   .topnav a:hover{
+    background-color: #add;
+    color:black;
+   }
