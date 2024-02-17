@@ -1,4 +1,14 @@
-<p>account works!</p>
-<button (click)="navigateToCreate('create')">create</button> 
- <router-outlet></router-outlet>
 
+<div class="detail-wrapper">
+    <button
+  mat-raised-button
+  color="primary"
+  (click)="navigateToCreate('create')"
+>
+  Create Student
+</button>
+<div class="content-section">
+    <router-outlet></router-outlet>
+
+</div>
+</div>

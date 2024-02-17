@@ -7,31 +7,19 @@ import { PopUpComponent } from '../pop-up/pop-up.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+  isAvailable: boolean = true;
+  value = 100;
 
-  isAvailable:boolean=true;
-  value=100;
+  constructor(private md: MatDialog) {}
 
-  
-  
-  constructor(private md:MatDialog){
-
+  popUpFunction() {
+    this.md.open(PopUpComponent,{
+      minWidth:'60%'
+    });
   }
 
-  popUpFunction(){
-
-    this.md.open(PopUpComponent);
-
-  }
-
-  mgOnIt():void{
-   
-
-  }
-
-  
-  
-  
+  mgOnIt(): void {}
 }

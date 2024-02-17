@@ -6,6 +6,7 @@ import { CreateComponent } from './create/create.component';
 import { AccountComponent } from './account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from '../shared/modules/shared.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AccountRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class AccountModule { }

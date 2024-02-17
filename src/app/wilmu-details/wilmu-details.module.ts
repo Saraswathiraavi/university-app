@@ -8,7 +8,7 @@ import { AdmissionsComponent } from './admissions/admissions.component';
 import { CptComponent } from './cpt/cpt.component';
 import { OptComponent } from './opt/opt.component';
 import { RouterModule } from '@angular/router';
-
+import { SharedModule } from '../shared/modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,14 +16,13 @@ import { RouterModule } from '@angular/router';
     SportsComponent,
     AdmissionsComponent,
     OptComponent,
-    CptComponent
-
+    CptComponent,
   ],
   imports: [
     CommonModule,
     WilmuDetailsRoutingModule,
-    RouterModule
-    
-  ]
+    RouterModule,
+    SharedModule,
+  ],
 })
-export class WilmuDetailsModule { }
+export class WilmuDetailsModule {}

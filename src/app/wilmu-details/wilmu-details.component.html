@@ -1,16 +1,51 @@
-<div class="column">
+<!-- <div class="column">
     <h2>wilmu details</h2>
-    <div class="topnav">
-        <a (click)="navigateToAdmissions('sports')">sports</a> <br>
-        <a (click)="navigateToAdmissions('admissions')">admissions</a> <br>
-        <a (click)="navigateToAdmissions('opt')">opt</a> <br>
-        <a (click)="navigateToAdmissions('cpt')">cpt</a>
-       
-    </div>
+  
     
-  <router-outlet></router-outlet>
+
    
     
 </div>
 
+ -->
 
+<div class="detail-wrapper">
+  <div class="heading-section">
+    <h1>Wilmu Section</h1>
+  </div>
+  <div class="content-section">
+    <div class="topnav">
+      <button
+        class="navigation-item"
+        mat-raised-button
+        (click)="navigateToAdmissions('sports')"
+      >
+        Sports
+      </button>
+      <button
+        class="navigation-item"
+        mat-raised-button
+        (click)="navigateToAdmissions('admissions')"
+      >
+        Admissions
+      </button>
+      <button
+        class="navigation-item"
+        mat-raised-button
+        (click)="navigateToAdmissions('opt')"
+      >
+        OPT
+      </button>
+      <button
+        class="navigation-item"
+        mat-raised-button
+        (click)="navigateToAdmissions('cpt')"
+      >
+        CPT
+      </button>
+    </div>
+  </div>
+  <div class="child-section">
+    <router-outlet></router-outlet>
+  </div>
+</div>

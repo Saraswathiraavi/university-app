@@ -1,0 +1,12 @@
+.button-wrapper {
+  display: flex;
+  justify-content: start;
+  padding: 2%;
+}
+.success-message-button {
+  margin-left: 2%;
+}
+
+.success-message {
+  margin: 2%;
+}

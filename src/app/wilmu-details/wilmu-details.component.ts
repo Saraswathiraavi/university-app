@@ -4,18 +4,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-wilmu-details',
   templateUrl: './wilmu-details.component.html',
-  styleUrls: ['./wilmu-details.component.css']
+  styleUrls: ['./wilmu-details.component.css'],
 })
 export class WilmuDetailsComponent {
-  constructor(private router:Router){
+  constructor(private router: Router) {}
 
+  navigateToAdmissions(type: string) {
+    this.router.navigate(['wilmu/' + type]);
   }
-
-  navigateToAdmissions(type : string){
-    this.router.navigate(['wilmu/'+ type]);
-  
-  }
- 
-
-}  
-
+}

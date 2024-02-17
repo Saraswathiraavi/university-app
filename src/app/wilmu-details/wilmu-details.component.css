@@ -1,17 +1,22 @@
-.column{
-    float: left;
-    width: 25%;
-    padding: 15px;
-    
+.column {
+  float: left;
+  width: 25%;
+  padding: 15px;
 }
-.topnav{
-    background-color: azure;
-    text-align: left;
-    text-decoration-color: black;
-    padding: 14px.16px;
-   }
+.topnav {
+  display: flex;
+  flex-direction: row;
+}
 
-   .topnav a:hover{
-    background-color: #add;
-    color:black;
-   }
+.navigation-item {
+  width: 20%;
+  margin-left: 2%;
+}
+
+.navigation-item :first-child {
+  margin-left: 0;
+}
+
+.child-section {
+  margin-top: 2%;
+}

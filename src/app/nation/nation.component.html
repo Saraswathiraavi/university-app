@@ -1,9 +1,13 @@
-<p>nation works!</p>
-<button type="submit" (click)="addToCart()">Add to Cart</button>
+<!-- <p>nation works!</p> -->
 
 <button class="button" (click)="navigateToIndia()">India</button>
 <button class="button button2" (click)="navigateToNepal()">Nepal</button>
 <button class="button button3" (click)="getNationalUniversities()">show all</button>
+<button style="
+    background: yellow;
+    float: right;
+    margin: 10px;
+    color: blue;" type="submit" (click)="addToCart()">Add to Cart</button>
 
 <router-outlet></router-outlet>
 

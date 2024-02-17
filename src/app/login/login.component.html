@@ -1,14 +1,19 @@
-<div>
-    <form action="/action_page.php">
-      <label for="username">Username:</label>
-      <input type="text" id="fname" name="username" placeholder="User Id"> 
-  
-      <label for="password">password:</label>
-      <input type="password" id="password" name="password" placeholder="password">
-  
 
-    
-      <button>login</button>
-    </form>
-  </div>
-  
+<div class="detail-wrapper">
+  <form>
+    <label for="fname">Username</label>
+    <input type="text" id="fname" name="firstname" placeholder="Username"  />
+
+    <label for="lname">Password</label>
+    <input
+      type="password"
+      id="lname"
+      name="lastname"
+      placeholder="Password"
+    />
+
+   
+
+    <button mat-raised-button color="primary" class="button">Submit</button>
+  </form>
+</div>

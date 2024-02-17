@@ -2,7 +2,6 @@ import { NgModule, TemplateRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -16,7 +15,7 @@ import { StaffDetailsComponent } from './staff-details/staff-details.component';
 // import { OptComponent } from './wilmu-details/opt/opt.component';
 // import { CptComponent } from './wilmu-details/cpt/cpt.component';
 // import { UniversityComponent } from './university/university.component';
-import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { NationComponent } from './nation/nation.component';
@@ -27,29 +26,28 @@ import { TableComponent } from './shopping/table/table.component';
 import { AbcComponent } from './comp-rel/abc/abc.component';
 import { XyzComponent } from './comp-rel/xyz/xyz.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { HighlightTextDirective } from './highlight-text/highlight-text.directive';
 import { RenderingDirective } from './highlight-text/rendering.directive';
 import { StuctureDirectiveDirective } from './highlight-text/stucture-directive.directive';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/modules/shared.module';
 
 // import { AccountComponent } from './account/account.component';
 // import { CreateComponent } from './account/create/create.component';
 // import { HomeComponent } from './home/home.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    
+
     HeaderComponent,
     NavigationComponent,
     StudentDetailsComponent,
     StaffDetailsComponent,
     HomeComponent,
-   
+
     OverviewComponent,
     TableComponent,
     AbcComponent,
@@ -59,9 +57,7 @@ import { LoginComponent } from './login/login.component';
     RenderingDirective,
     StuctureDirectiveDirective,
     LoginComponent,
-    
-    
-    
+
     // AccountComponent,
     // CreateComponent
     // WilmuDetailsComponent,
@@ -70,8 +66,6 @@ import { LoginComponent } from './login/login.component';
     // OptComponent,
     // CptComponent
     // UniversityComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -80,12 +74,11 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MatDialogModule
-    
-    
-  
+    MatDialogModule,
+    BrowserAnimationsModule,
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -5,22 +5,14 @@ import { HomeComponent } from '../home/home.component';
 @Component({
   selector: 'app-pop-up',
   templateUrl: './pop-up.component.html',
-  styleUrls: ['./pop-up.component.css']
+  styleUrls: ['./pop-up.component.css'],
 })
 export class PopUpComponent {
+  details: any;
 
-  details:any;
+  constructor(private md: MatDialog) {}
 
-  constructor(private md:MatDialog){
-    
-   
-
-  }
-
-  closePopUP(){
-
-    
+  close() {
     this.md.ngOnDestroy();
   }
-
 }
