@@ -1,5 +1,37 @@
-.header{
-    text-align: center;
-    background-color: antiquewhite;
-    text-decoration: double;
+.header {
+  text-align: center;
+  background-color: white;
+  text-decoration: double;
+  color: #00843d;
+  min-height: 80px;
+}
+.header-image img {
+  height: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block; 
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #00843d;
+  color: white;
+}
+
+.active {
+  background-color: #00843d;
 }

@@ -24,3 +24,6 @@ body {
 .item-button :first-child {
   margin-left: 0;
 }
+.color-green{
+  color: #00843d;
+}

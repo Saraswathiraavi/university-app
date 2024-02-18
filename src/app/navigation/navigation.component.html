@@ -1,28 +1,11 @@
-<!-- <div class='topnav'> 
-    <a (click)='navigateToStudent()'>student</a>  <br>
-    <a (click)='navigateToStaff()'>staff</a>  <br>
-    <a (click)='navigateToWilmu()'>wilmu</a>
-</div> -->
-
-<ul appRendering defaultColor="skyblue" highlightColor="pink">
-  <li>
-    <a (click)="navigateToHome()">Home- {{ noOfCnt }}</a>
+<ul appRendering defaultColor="#00843d" highlightColor="#00843d">
+  <li class="text-capitalize"><a>myWilmU</a></li>
+  <li class="text-capitalize"><a>Library</a></li>
+  <li class="text-capitalize"><a>Safety</a></li>
+  <li class="text-capitalize">
+    <a>Give To WilmU</a>
   </li>
-  <li><a (click)="navigateToStudent()">student</a></li>
-  <li><a (click)="navigateToStaff()">staff</a></li>
-  <li><a (click)="navigateToWilmu()">wilmu</a></li>
-  <li>
-    <a (click)="navigateToUniversity()"
-      >university -- {{ totalNoOfUniversities }}</a
-    >
-  </li>
-  <li><a (click)="navigateToAccount()">Account</a></li>
-  <li><a (click)="navigateToNation()">Nation</a></li>
-  <li><a (click)="navigateToShopping()">Shopping</a></li>
-  <li>
-    <a>Cart Items - {{ noOfItemsInCart }}</a>
-  </li>
-  <li><a (click)="navigateToCompRel()">comp-rel</a></li>
-  <li><a (click)="navigateToPopUp()">pop-up</a></li>
-  <li><a (click)="navigateToLogin()">Login</a></li>
+  <li class="text-capitalize"><a>Contact Us</a></li>
+  <li class="text-capitalize"><a>Request Info</a></li>
+  <li class="text-capitalize"><a>Apply Now</a></li>
 </ul>

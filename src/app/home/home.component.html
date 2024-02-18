@@ -1,18 +1,302 @@
-<p></p>
 
-<div class="button-wrapper">
-  <button mat-raised-button color="primary" (click)="popUpFunction()">
-    Open Pop-up
-  </button>
-  <button
-    mat-raised-button
-    color="primary"
-    class="success-message-button"
-    (click)="isAvailable = !isAvailable"
+<div class="video">
+  <video
+    id="background-video"
+    autoplay
+    loop
+    muted
+    poster="/assets/1477619_education_people_3840x2160.mp4"
   >
-    Toggle To See the Success Message
-  </button>
+    <source
+      src="/assets/1477619_education_people_3840x2160.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div
+    class="banner-info w-100 justify-content-center align-items-center d-flex"
+  >
+    <div class="w-50 banner-content p-20">
+      <h1>Accredited Academics in a Caring Community</h1>
+      <h2>
+        WilmU provides life-changing education in inclusive learning
+        environments, both online and in person. It has been our privilege to
+        serve students since 1968.
+      </h2>
+      <div class="d-flex justify-content-evenly">
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="navigate('https://www.wilmu.edu/programs/index.aspx')"
+        >
+          Find your Program
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          (click)="
+            navigate('https://www.wilmu.edu/studentexperience/index.aspx')
+          "
+        >
+          Explore the WilmU Experience
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
-<div appHighlightText *appStuctureDirective="isAvailable" class="success-message">
-  This is the success message
+<div
+  style="
+    color: #777;
+    background-color: white;
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+  "
+>
+  <h3 style="text-align: center">WILMU IN FOCUS</h3>
+</div>
+<div class="bgimg-1">
+  <div class="caption-1">
+    <p-carousel
+      [value]="InFocus"
+      [numVisible]="3"
+      [numScroll]="3"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions"
+      autoplayInterval="3000"
+    >
+      <ng-template let-product pTemplate="item">
+        <div
+          class="border-1 rounded border surface-border border-round m-2 text-center py-5 px-3 bg-light"
+        >
+          <div class="mb-3">
+            <img
+              src="{{ product.img }}"
+              [alt]="product.name"
+              class="focus-img shadow-2"
+            />
+          </div>
+          <div>
+            <h4 (click)="navigate(product.link)" class="mb-1 cursor-pointer">
+              <u
+                ><b>{{ product.name }}</b></u
+              >
+            </h4>
+            <h5 class="mt-0 mb-3">{{ product.detail }}</h5>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>
+
+<div
+  style="
+    color: #777;
+    background-color: white;
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+  "
+>
+  <h3 style="text-align: center">Wilmington University</h3>
+  <p>
+    Wilmington University was founded just outside historic New Castle,
+    Delaware, in 1968 by Dr. Donald E. Ross, who served as the institution's
+    president until 1977. The school began with a charter class of 194 students
+    in 1968; between 1979 and 2006, the university grew to more than 10,000
+    students under the leadership of president Dr. Audrey K. Doberstein.
+    Doberstein was inducted into the Hall of Fame of Delaware Women in 2011 in
+    recognition of her contributions to Wilmington University and the community.
+    The university now offers graduate and doctoral degrees, and serves more
+    than 20,000 students enrolled annually in online and on-campus classes at
+    campuses in three states.<br /><br />
+    Founded as Wilmington College, the institution officially became Wilmington
+    University on September 10, 2007, after the approval of the board of
+    trustees and the Middle States Commission on Higher Education. The name was
+    changed to reflect the emphasis on undergraduate and postgraduate degree
+    programs.
+  </p>
+</div>
+<div style="position: relative">
+  <div
+    style="
+      color: #ddd;
+      background-color: #282e34;
+      text-align: center;
+      padding: 50px 80px;
+      text-align: center;
+    "
+  >
+    <h2>
+      Select your perfect undergraduate or graduate degree or certificate
+      program
+    </h2>
+  </div>
+</div>
+<div class="bgimg-2">
+  <div class="caption-2">
+    <div class="w-100 d-flex justify-content-center">
+      <form class="card w-50 p-3 d-flex flex-column">
+        <div class="w-100 d-flex justify-content-evenly">
+          <div class="mb-3 w-50 text-start">
+            <select class="form-select" aria-label="Default select example">
+              <option value="0" role="option" selected>
+                Search By Degree Level
+              </option>
+              <option value="bach" role="option">Bachelor's</option>
+              <option value="master" role="option">Master's</option>
+              <option value="cert" role="option">Certificate</option>
+              <option value="doc" role="option">Doctoral</option>
+              <option value="assoc" role="option">Associate</option>
+              <option value="minor" role="option">Undergraduate Minor</option>
+            </select>
+          </div>
+          <div class="mb-3 w-50 text-start">
+            <select
+              name="CareerClustersDropDownList"
+              id="CareerClustersDropDownList"
+              title="List of Career Clusters"
+              role="menu"
+              class="form-select"
+            >
+              <option value="0">Search By Academic Interest</option>
+              <option value="1">Art, Communication &amp; Marketing</option>
+              <option value="2">Business, Management, Administration</option>
+              <option value="3">Education</option>
+              <option value="4">Finance</option>
+              <option value="5">Health &amp; Nursing</option>
+              <option value="6">Human Services</option>
+              <option value="7">Information Technology</option>
+              <option value="8">
+                Law, Public Policy, Criminal Justice &amp; Security
+              </option>
+              <option value="9">
+                Science, Technology, Engineering &amp; Math (STEM)
+              </option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-warning">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div style="position: relative">
+  <div
+    style="
+      color: #ddd;
+      background-color: #282e34;
+      text-align: center;
+      padding: 50px 80px;
+      text-align: center;
+    "
+  >
+    <h2>
+      <i
+        ><b
+          >"At WilmU, your professors know your name and genuinely work with
+          you. It is a professional learning community, where inclusion is a
+          priority."</b
+        ></i
+      >
+    </h2>
+    <h4>- Kasey T., B.S.N. '15, M.S.N. '18</h4>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption-2">
+    <div
+      class="border p-2"
+      style="background-color: rgba(0, 0, 0, 0.6); color: white"
+    >
+      <h3 style="color: white"><b>Featured News & Stories</b></h3>
+      <p>
+        Find more stories about WilmU academics, alumni, sports and events at
+        News at WilmU.
+      </p>
+    </div>
+    <p-carousel
+      [value]="featuredNews"
+      [numVisible]="4"
+      [numScroll]="3"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions"
+      autoplayInterval="3000"
+    >
+      <ng-template let-product pTemplate="item">
+        <div
+          class="border-1 rounded border surface-border border-round m-2 text-center bg-light h-100"
+        >
+          <div class="mb-3">
+            <img
+              src="{{ product.img }}"
+              [alt]="product.name"
+              class="news-img shadow-2 rounded"
+            />
+          </div>
+          <div class="p-2">
+            <div class="w-100 d-flex justify-content-start">
+              <button type="button" class="btn btn-outline-primary btn-sm">
+                {{ product.tag }}
+              </button>
+            </div>
+            <h4
+              class="mb-1 text-start cursor-pointer"
+              (click)="navigate(product.link)"
+            >
+              <u
+                ><b>{{ product.name }}</b></u
+              >
+            </h4>
+            <h5 class="text-start mt-0 mb-3">{{ product.date }}</h5>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>
+
+<!-- <div style="position: relative">
+  <div
+    style="
+      color: #ddd;
+      background-color: #282e34;
+      text-align: center;
+      padding: 50px 80px;
+      text-align: justify;
+    "
+  >
+    <p>
+      Scroll up and down to really get the feeling of how Parallax Scrolling
+      works.
+    </p>
+  </div>
+</div>
+
+<div class="bgimg-4">
+  <div class="caption">
+    <span class="border">COOL!</span>
+  </div>
+</div> -->
+<div class="w-100 bg-light p-2 px-5">
+  <div class="d-flex justify-content-between">
+    <div style="width: 40%" class="p-4">
+      <div>
+        <h2>Ready to start your application?</h2>
+        <p>It's quick and easy. Let's get you started!</p>
+      </div>
+      <button type="button" class="btn btn-success">Apply Now</button>
+    </div>
+    <div class="card p-4 w-50">
+      <h2>Contact us with your questions</h2>
+      <p>
+        <b>Our Enrollment Specialists</b> can guide you through the application
+        process, admission requirements, funding options and more so you can
+        <b>build the WilmU education plan that works for you</b>.
+      </p>
+      <button type="button" class="w-50 btn btn-warning">Contact Us</button>
+    </div>
+  </div>
 </div>

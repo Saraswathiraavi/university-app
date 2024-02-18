@@ -6,30 +6,26 @@ import { CartService } from '../cart.service';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
-
   totalNoOfUniversities: number = null;
 
   noOfItemsInCart: number = null;
 
-  noOfCnt:number=null;
+  noOfCnt: number = null;
 
-  constructor(private router:Router, private getService: GetService, private cartService: CartService){
-    
-  }
+  constructor(
+    private router: Router,
+    private getService: GetService,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
-
-
-    this.cartService.cartItemsBs$.subscribe(
-      (cartIItemsInfo) => {
-        console.log(cartIItemsInfo);
-        this.noOfItemsInCart = cartIItemsInfo.length;
-      }
-      );
-
+    this.cartService.cartItemsBs$.subscribe((cartIItemsInfo) => {
+      console.log(cartIItemsInfo);
+      this.noOfItemsInCart = cartIItemsInfo.length;
+    });
 
     this.getService.uniLength$.subscribe(
       (univLen) => {
@@ -39,78 +35,65 @@ export class NavigationComponent implements OnInit {
     );
 
     this.getService.cntLength$.subscribe(
-      (cL:number)=>{
-        this.noOfCnt=cL;
-      },()=>{}
+      (cL: number) => {
+        this.noOfCnt = cL;
+      },
+      () => {}
     );
   }
 
-
-
-  navigateToStudent(){
+  navigateToStudent() {
     this.router.navigate(['student']);
   }
-  navigateToStaff(){
+  navigateToStaff() {
     this.router.navigate(['staff']);
   }
-  navigateToWilmu(){
+  navigateToWilmu() {
     this.router.navigate(['wilmu']);
   }
 
-  navigateToUniversity(){
+  navigateToUniversity() {
     this.router.navigate(['university']);
   }
 
-  navigateToHome(){
+  navigateToHome() {
     this.router.navigate(['home']);
   }
 
-  navigateToAccount(){
+  navigateToAccount() {
     this.router.navigate(['account']);
   }
-  navigateToNation(){
+  navigateToNation() {
     this.router.navigate(['nation']);
   }
-  
-  navigateToShopping(){
+
+  navigateToShopping() {
     this.router.navigate(['shopping']);
   }
 
-  navigateToCompRel(){
+  navigateToCompRel() {
     this.router.navigate(['comp-rel']);
   }
-  navigateToPopUp(){
+  navigateToPopUp() {
     this.router.navigate(['pop-up']);
   }
 
-  navigateToLogin(){
+  navigateToLogin() {
     this.router.navigate(['login']);
   }
 
-
-
-  
-
-
-
-
-  
-  getStudentDetails(){
-    console.log("students called");
+  getStudentDetails() {
+    console.log('students called');
     // alert("students");
   }
 
-  getStaffDetails(){
-    console.log("staff called");
+  getStaffDetails() {
+    console.log('staff called');
     // alert("staff");
   }
 
-  getWilmuDetails(){
-    console.log("wilmu called");
+  getWilmuDetails() {
+    console.log('wilmu called');
     // alert("wilmu");
   }
-
-  
-
-
 }
