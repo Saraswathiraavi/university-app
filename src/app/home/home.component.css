@@ -9,6 +9,11 @@
   bottom: 0;
   z-index: -1;
 }
+::ng-deep .video-player {
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
 .banner-info {
   position: absolute;
   top: 50%;
@@ -18,36 +23,21 @@
   background: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   padding: 50px;
+  width: 50%;
 }
 .banner-content h1 {
   color: white;
   font-family: Trebuchet MS;
   text-align: center;
+  font-size: 24px;
+  line-height: 24px;
 }
 .banner-content h2 {
   color: white;
   font-family: Trebuchet MS;
   text-align: center;
-}
-
-.banner-content h1 {
-  font-size: 3rem;
-  line-height: 3rem;
-}
-
-.banner-content h2 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-@media (max-width: 750px) {
-  #background-video {
-    display: none;
-  }
-  body {
-    background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
-    background-size: cover;
-  }
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .bgimg-1,
@@ -55,7 +45,6 @@
 .bgimg-3,
 .bgimg-4 {
   position: relative;
-  /* opacity: 0.65; */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -121,15 +110,6 @@ h3 {
   color: #111;
 }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1,
-  .bgimg-2,
-  .bgimg-3,
-  .bgimg-4 {
-    background-attachment: scroll;
-  }
-}
 :host ::ng-deep .product-item .product-item-content {
   border: 1px solid var(--surface-d);
   border-radius: 3px;
@@ -152,6 +132,84 @@ h3 {
   object-fit: cover;
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
+}
+.headings-section {
+  color: #777;
+  background-color: white;
+  text-align: center;
+  padding: 50px 80px;
+  text-align: justify;
+}
+.dark-heading-section {
+  color: #ddd;
+  background-color: #282e34;
+  text-align: center;
+  padding: 50px 80px;
+  text-align: center;
+}
+.text-align-center {
+  text-align: center;
+}
+.stories-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.form-card {
+  width: 50%;
+}
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-section .apply-section {
+  width: 40%;
+}
+.contact-section .contact-btn-section {
+  width: 50%;
+}
+@media only screen and (max-width: 600px) {
+  ::ng-deep .btn {
+    font-size: 0.6rem;
+  }
+  .banner-content {
+    padding: 5px;
+    width: 90%;
+  }
+  .banner-info {
+    padding: 5px;
+  }
+  .banner-content h1 {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .banner-content h2 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .form-card {
+    width: 90%;
+  }
+  .contact-section {
+    flex-direction: column;
+  }
+  .contact-section .apply-section {
+    width: 100%;
+  }
+  .contact-section .contact-btn-section {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  ::ng-deep .btn {
+    font-size: 0.8rem;
+  }
+  .banner-content h1 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .banner-content h2 {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
 }

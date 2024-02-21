@@ -1,21 +1,27 @@
-<div class="header d-flex align-items-center justify-content-between">
-  <div class="header-image">
-    <img src="https://www.wilmu.edu/images/logos/wilmu-logo-color-350x92.svg" />
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="#"><div class="header-image">
+      <img src="https://www.wilmu.edu/images/logos/wilmu-logo-color-350x92.svg" />
+    </div></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="text-capitalize nav-item">
+          <a class="nav-link" (click)="navigateToHome()">Home </a>
+        </li>
+        <li class="text-capitalize nav-item"><a class="nav-link" (click)="navigateToStudent()">student</a></li>
+        <li class="text-capitalize nav-item"><a class="nav-link" (click)="navigateToStaff()">staff</a></li>
+        <li class="text-capitalize nav-item"><a class="nav-link" (click)="navigateToWilmu()">wilmu</a></li>
+        <li class="text-capitalize nav-item">
+          <a class="nav-link" (click)="navigateToUniversity()">university</a>
+        </li>
+        <li class="text-capitalize nav-item"><a class="nav-link" (click)="navigateToAccount()">Account</a></li>
+        <li class="text-capitalize nav-item"><a class="nav-link" (click)="navigateToNation()">Nation</a></li>
+        <li class="text-capitalize nav-item"><a class="nav-link" (click)="navigateToLogin()">Login</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="text-start w-80">
-    <ul >
-      <li class="text-capitalize">
-        <a (click)="navigateToHome()">Home </a>
-      </li>
-      <li class="text-capitalize"><a (click)="navigateToStudent()">student</a></li>
-      <li class="text-capitalize"><a (click)="navigateToStaff()">staff</a></li>
-      <li class="text-capitalize"><a (click)="navigateToWilmu()">wilmu</a></li>
-      <li class="text-capitalize">
-        <a (click)="navigateToUniversity()">university</a>
-      </li>
-      <li class="text-capitalize"><a (click)="navigateToAccount()">Account</a></li>
-      <li class="text-capitalize"><a (click)="navigateToNation()">Nation</a></li>
-      <li class="text-capitalize"><a (click)="navigateToLogin()">Login</a></li>
-    </ul>
-  </div>
-</div>
+</nav>

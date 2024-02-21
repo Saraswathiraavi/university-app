@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, TemplateRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, NgZone, TemplateRef, ViewChild } from '@angular/core';
 import { CountryService } from '../country.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
@@ -9,7 +9,10 @@ import { PopUpComponent } from '../pop-up/pop-up.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit{
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef;
+
+  video_playback_error: boolean = false;
   isAvailable: boolean = true;
   value = 100;
   logoImg =
@@ -84,7 +87,66 @@ export class HomeComponent {
       tag: 'MAGAZINE',
     },
   ];
-  constructor(private md: MatDialog) {}
+  constructor(private md: MatDialog,private ngZone:NgZone) {}
+  ngAfterViewInit(): void {
+    this.ngZone.runOutsideAngular(() => {
+   this.playVideo();
+    });
+  }
+  mp4_video_url="/assets/1477619_education_people_3840x2160.mp4"
+
+playVideo() {
+    let that = this;
+    let v = document.createElement('video');
+    v.id = 'videoElement'
+    v.src = this.mp4_video_url; // we need this
+    v.muted = true;
+    v.autoplay = true;
+    v.loop = true;
+    v.preload = 'none';
+    v.playsInline = true;
+    v.crossOrigin="anonymous";
+    v.classList.add("video-player");
+    const promise = v.play();
+
+    if (promise !== undefined) {
+      promise.then(function() {
+        console.log('autoplay started');
+        that.videoPlayer.nativeElement.appendChild(v);
+        v.muted = true;
+        v.autoplay = true;
+        v.src = that.mp4_video_url;
+
+      // Automatic playback started!
+      }).catch(function(error) {
+        console.log('autoplay error - attempting to play again in .mp4 | ', error);
+        v.muted = true;
+        v.autoplay = true;
+        v.src = that.mp4_video_url;
+        
+        let fallback = v.play();
+        if (fallback !== undefined) {
+          fallback.then((_: any) => {
+            
+            console.log('autoplay started');
+            that.videoPlayer.nativeElement.appendChild(v);
+            v.muted = true;
+            v.autoplay = true;
+            v.src = that.mp4_video_url;
+            // Autoplay started!
+          }).catch((error: any) => {
+
+            console.log('autoplay failed - falling back to image | ', error)
+            that.video_playback_error = true;
+          })
+        } else {
+          that.video_playback_error = true;
+        }
+      });
+    } else {
+      this.video_playback_error = true;
+    }
+  }
   navigate(link) {
     window.open(link);
   }
